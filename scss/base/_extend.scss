@@ -1,0 +1,10 @@
+%flexwrap{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+%bloques{
+    float:left;
+    padding:nth($size, 4);
+    box-sizing: border-box;
+}

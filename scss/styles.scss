@@ -1,0 +1,213 @@
+@import './base/vars';
+@import './base/listas';
+@import './base/maps';
+@import './base/extend';
+@import './base/mixin';
+
+*{ 
+    padding:0%;
+    list-style-type: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+/* header */
+
+@import './componentes/header';
+
+
+
+
+/* footer */
+
+
+@import './componentes/footer';
+
+
+
+/* body */
+
+
+body{
+    background-color:nth($colores, 3);
+}
+
+.linea{
+    
+ border-top: nth($size, 1) solid nth($colores, 2);
+ height: nth($size, 2);
+ max-width: nth($size, 7);
+ padding: 0;
+ margin: nth($size, 4) auto 0 auto;
+      
+}
+
+
+/* INDEX */
+
+.index_h1{
+    background-image: url('../img/istockphoto-1327760152-612x612.jpg');
+background-repeat: no-repeat;
+background-size: cover; height: nth($size, 6);
+}
+
+.index_titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+h1{
+    color: map-get($index-h1 , color);
+   
+    font-weight: map-get($index-h1 , fontweight);
+    display: flex;
+    justify-content: center;
+    
+}
+
+.index_aboutus{
+    color:nth($colores, 4);
+    display: flex;
+    justify-content: center;
+    &:hover{
+        color:darken(nth($colores, 4), 35%)
+    }
+}
+
+
+.index_main_textos {
+    p {
+        background-color:rgba(nth($colores, 2), 1.0)
+    }
+}
+
+
+
+#aboutus{
+    span{
+        color:nth($colores, 2);
+}
+}
+
+
+
+
+/* historia */
+
+.contenedor_historia{
+    background-color: nth($colores, 5);
+    width:80%;
+    max-width:nth($size, 9);
+    overflow: hidden; 
+}
+
+.origencafe{
+    @include blhis(70%, nth($colores, 6) );
+    @extend %bloques;
+    @media screen and (max-width:nth($size, 8)){ width: 100%; }
+}
+
+
+
+.cafeitalia{
+    @include blhis(30%, nth($colores, 7) );
+    @extend %bloques;
+    @media screen and (max-width:nth($size, 8)) {width: 100%; } 
+}
+
+.cafeactualidad{
+    @include blhis(70%, nth($colores, 8) );
+    @extend %bloques;
+    @media screen and (max-width:nth($size, 8)){ width: 100%;  }
+}
+
+.cafeoceania{
+    @include blhis(30%, nth($colores, 9) );
+    @extend %bloques;
+    @media screen and (max-width:nth($size, 8)){ width: 100%;  }
+}
+
+.contenedor_historia {
+    @media screen and (max-width:nth($size, 7)){
+        width:100%}
+}
+
+    div {
+        img{
+            width:100%;
+            height:auto;
+            max-width: nth($size, 6);
+        }
+    }
+
+
+
+
+.robustavsarabica{
+    margin-top: nth($size, 4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.robustavsarabica {
+    table{
+        background-color: nth($colores, 10);
+        & :hover{
+            background-color: nth($colores, 3);
+        }
+    }
+}
+
+
+/* tienda */
+
+.productos_tienda{
+    color:nth($colores, 11);
+}
+
+.tienda_h1{
+    background:nth($colores, 12);
+    text-align: center;
+}
+
+.productos_tienda {
+    @extend %flexwrap;
+    gap: nth($size, 4);
+    @media screen and (max-width:600px){
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+/* preparaciones*/
+
+.preparaciones_h1{
+    background-image: url('../img/artelatte.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; height: nth($size, 7);
+}
+
+
+.preparaciones{
+    height: auto;
+    @extend %flexwrap;
+    row-gap: nth($size, 4);
+    column-gap: nth($size, 4);
+    justify-content: center;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+/* mapa */
+
+.mapacafes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
