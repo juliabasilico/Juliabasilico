@@ -47,15 +47,31 @@ body{
 
 .index_h1{
     background-image: url('../img/istockphoto-1327760152-612x612.jpg');
-background-repeat: no-repeat;
-background-size: cover; height: nth($size, 6);
+    background-repeat: no-repeat;
+    background-size: cover; height: nth($size, 6);
+    background-position: center;
+    
 }
 
 .index_titulo{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    align-items: space-between;
+    margin-bottom: 20px; 
+    background: rgb(39,34,39);
+    background: linear-gradient(180deg, rgba(39,34,39,0.5088629201680672) 3%, rgba(255,201,255,0) 100%);
+
+
+
+
 }
+
+
+
+.index_main_textos {
+    margin: 20px; 
+  
+  }
 
 
 h1{
@@ -72,7 +88,8 @@ h1{
     display: flex;
     justify-content: center;
     &:hover{
-        color:darken(nth($colores, 4), 35%)
+        color:darken(nth($colores, 4), 35%); 
+        
     }
 }
 
@@ -150,9 +167,6 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.robustavsarabica {
     table{
         background-color: nth($colores, 10);
         & :hover{
@@ -160,6 +174,8 @@ h1{
         }
     }
 }
+
+
 
 
 /* tienda */
