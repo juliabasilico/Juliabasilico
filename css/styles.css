@@ -202,6 +202,11 @@ form {
   justify-content: space-evenly;
 }
 
+.newsletter {
+  color: rgb(228, 150, 163);
+  padding: 30px;
+}
+
 /* preparaciones*/
 .preparaciones_h1 {
   background-image: url("../img/artelatte.jpg");
