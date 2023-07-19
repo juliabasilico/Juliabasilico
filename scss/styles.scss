@@ -43,6 +43,8 @@ body{
 }
 
 
+
+
 /* INDEX */
 
 .index_h1{
@@ -65,7 +67,6 @@ body{
 
 
 }
-
 
 
 .index_main_textos {
@@ -99,10 +100,15 @@ h1{
         background-color:rgba(nth($colores, 2), 1.0)
     }
 }
-
+.row{
+    img{
+        margin-bottom: 20px;
+    }
+}
 
 
 #aboutus{
+    padding-left:20px;
     span{
         color:nth($colores, 2);
 }
@@ -190,6 +196,7 @@ h1{
 }
 
 .productos_tienda {
+    margin-left:20px;
     @extend %flexwrap;
     gap: nth($size, 4);
     @media screen and (max-width:600px){
@@ -198,7 +205,10 @@ h1{
     }
 }
 
-
+form{
+    display: flex;
+    justify-content:space-evenly;
+}
 
 /* preparaciones*/
 
