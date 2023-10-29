@@ -115,11 +115,47 @@ botonVaciarCarrito.addEventListener("click", function() {
   alert("El carrito ha sido vaciado");
 });
 
+localStorage.setItem("saludo", "Hola!")
+
+const saludo = localStorage.getItem("saludo");
+
+console.log(saludo);
 
 
-localStorage.setItem("saludo", "hola!")
+const articulosJSON = JSON.stringify (articulos);
 
-const saludin = localStorage.getItem("saludo");
+console.log(articulos);
+/*
 
-console.log(saludin);
+const contenedor= document.querySelector('#listado');
+
+fetch('/articulos.json')
+.then (Respuesta => Respuesta.json())
+.then (data => {
+  data.forEach(item=> {
+  const li = document.createElement('li');
+  li.innerHTML = `
+  <h4>
+    ${item.nombre}
+  </h4>
+  <p>
+    ${item.precio}
+  </p>`
+  contenedor.appendChild(li);
+});
+})
+
+
+
+
+const guardarArticulos = (articulos, articulos => {
+  localStorage.setItem(articulos,articulos);
+})
+
+guardarArticulos('articulos', json.stringify(articulos));
+for (const articulo of articulos) {
+  guardarArticulos(articulo.nombre, JSON.stringify(producto));
+ }
+*/
+
 

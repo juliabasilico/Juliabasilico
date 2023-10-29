@@ -1,0 +1,9 @@
+[
+    { "id": 1, "nombre": "v60", "precio": 7700 },
+    { "id": 2, "nombre": "prensa francesa", "precio": 9070 },
+    { "id": 3, "nombre": "tamper", "precio": 4300 },
+    { "id": 4, "nombre": "moka", "precio": 13300 },
+    { "id": 5, "nombre": "jarrito pitcher", "precio": 5090 },
+    { "id": 6, "nombre": "taza café", "precio": 2900 }
+  ]
+  
