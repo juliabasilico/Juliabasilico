@@ -1,7 +1,11 @@
 console.log(document);
 
-alert("Solo por hoy! 10% off en todos los productos.");
 
+
+
+setTimeout(() => {
+  alert("Solo por hoy! 10% off en todos los productos.");
+}, 3000);
 
 const carrito = []
  const articulos= [
@@ -44,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(productos[4].innerHTML);
   console.log(productos[5].innerHTML);
   
- /* Document.getelementbyid("nombre").value = "julia"; */
+ 
 
 
 
@@ -119,18 +123,21 @@ localStorage.setItem("saludo", "Hola!")
 
 const saludo = localStorage.getItem("saludo");
 
-console.log(saludo);
 
+setTimeout(() => {
+  console.log(saludo);
+}, 3000);
 
 const articulosJSON = JSON.stringify (articulos);
 
 console.log(articulos);
+
 /*
+Prueba fetch con json
+const contenedor= document.querySelector('#productos_tienda');
 
-const contenedor= document.querySelector('#listado');
-
-fetch('/articulos.json')
-.then (Respuesta => Respuesta.json())
+fetch('productos.json')
+.then (Response => Response.json())
 .then (data => {
   data.forEach(item=> {
   const li = document.createElement('li');
@@ -146,7 +153,7 @@ fetch('/articulos.json')
 })
 
 
-
+ prueba con localStorage
 
 const guardarArticulos = (articulos, articulos => {
   localStorage.setItem(articulos,articulos);
@@ -157,5 +164,48 @@ for (const articulo of articulos) {
   guardarArticulos(articulo.nombre, JSON.stringify(producto));
  }
 */
+
+const contactForm = document.querySelector('#contact_form');
+const userName = document.querySelector('#user_name');
+const userSurname = document.querySelector('#user_surname');
+const userEmail = document.querySelector('#user_email');
+
+contactForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  console.log(userName.value);
+  console.log(userSurname.value);
+  console.log(userEmail.value);
+  const body = {
+    service_id: 'service_ye3pisq',
+    template_id: 'template_0el7m87',
+    user_id: 'alyUfWBgokFgLIDZH',
+    template_params: {
+      'to_name': userName.value,
+      'from_name': userEmail.value,
+    }
+  };
+  await sendEmail(body); 
+});
+
+
+
+
+const sendEmail = async (body) => {
+  const settings = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json', 
+    },
+    body: JSON.stringify(body),
+  };
+
+  try {
+    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', settings);
+    console.log(response); 
+  } catch (error) {
+    console.error(error);
+    
+  }
+};
 
 
