@@ -1,11 +1,10 @@
 console.log(document);
 
-
-
-
 setTimeout(() => {
   alert("Solo por hoy! 10% off en todos los productos.");
 }, 3000);
+
+
 
 const carrito = []
  const articulos= [
@@ -48,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(productos[4].innerHTML);
   console.log(productos[5].innerHTML);
   
- 
+ /* Document.getelementbyid("nombre").value = "julia"; */
 
 
 
@@ -123,7 +122,6 @@ localStorage.setItem("saludo", "Hola!")
 
 const saludo = localStorage.getItem("saludo");
 
-
 setTimeout(() => {
   console.log(saludo);
 }, 3000);
@@ -131,13 +129,12 @@ setTimeout(() => {
 const articulosJSON = JSON.stringify (articulos);
 
 console.log(articulos);
-
 /*
-Prueba fetch con json
-const contenedor= document.querySelector('#productos_tienda');
 
-fetch('productos.json')
-.then (Response => Response.json())
+const contenedor= document.querySelector('#listado');
+
+fetch('/articulos.json')
+.then (Respuesta => Respuesta.json())
 .then (data => {
   data.forEach(item=> {
   const li = document.createElement('li');
@@ -153,7 +150,7 @@ fetch('productos.json')
 })
 
 
- prueba con localStorage
+
 
 const guardarArticulos = (articulos, articulos => {
   localStorage.setItem(articulos,articulos);
@@ -164,7 +161,6 @@ for (const articulo of articulos) {
   guardarArticulos(articulo.nombre, JSON.stringify(producto));
  }
 */
-
 const contactForm = document.querySelector('#contact_form');
 const userName = document.querySelector('#user_name');
 const userSurname = document.querySelector('#user_surname');
